@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  professional: one
+  ocupation: one
+  description: MyString
+  price: 1
+
+two:
+  professional: two
+  ocupation: two
+  description: MyString
+  price: 1

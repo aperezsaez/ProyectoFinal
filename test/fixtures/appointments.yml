@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-09-12
+  done: false
+  professional: one
+  client: one
+
+two:
+  date: 2018-09-12
+  done: false
+  professional: two
+  client: two
