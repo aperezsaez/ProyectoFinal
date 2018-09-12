@@ -4,8 +4,29 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, autocomplete: "Nombre" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.text_field :photo, autocomplete: "Foto de Perfil"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone%>
+    <%= f.telephone_field :phone, autocomplete: "Telefono"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :address%>
+    <%= f.text_field :address, autocomplete: "Dirección"%>
+
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
   </div>
 
   <div class="field">
