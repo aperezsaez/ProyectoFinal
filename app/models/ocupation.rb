@@ -1,4 +1,4 @@
 class Ocupation < ApplicationRecord
-  has_many :prof_ocus
-  has_many :users, through: :prof_ocu
+  has_many :user_ocus
+  has_many :users, through: :user_ocu
 end
