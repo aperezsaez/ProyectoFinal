@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_12_232922) do
+ActiveRecord::Schema.define(version: 2018_09_26_232245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,19 +18,10 @@ ActiveRecord::Schema.define(version: 2018_09_12_232922) do
   create_table "appointments", force: :cascade do |t|
     t.date "date"
     t.boolean "done", default: false
-    t.bigint "professional_id"
-    t.bigint "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_appointments_on_client_id"
-    t.index ["professional_id"], name: "index_appointments_on_professional_id"
-  end
-
-  create_table "clients", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_clients_on_user_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "ocupations", force: :cascade do |t|
@@ -48,23 +39,14 @@ ActiveRecord::Schema.define(version: 2018_09_12_232922) do
     t.index ["appointment_id"], name: "index_payments_on_appointment_id"
   end
 
-  create_table "prof_ocus", force: :cascade do |t|
-    t.bigint "professional_id"
-    t.bigint "ocupation_id"
-    t.string "description"
-    t.integer "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ocupation_id"], name: "index_prof_ocus_on_ocupation_id"
-    t.index ["professional_id"], name: "index_prof_ocus_on_professional_id"
-  end
-
-  create_table "professionals", force: :cascade do |t|
+  create_table "user_ocus", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "ocupation_id"
+    t.integer "Price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "bio", limit: 500
-    t.index ["user_id"], name: "index_professionals_on_user_id"
+    t.index ["ocupation_id"], name: "index_user_ocus_on_ocupation_id"
+    t.index ["user_id"], name: "index_user_ocus_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,15 +61,14 @@ ActiveRecord::Schema.define(version: 2018_09_12_232922) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "bio"
+    t.integer "rol"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "appointments", "clients"
-  add_foreign_key "appointments", "professionals"
-  add_foreign_key "clients", "users"
+  add_foreign_key "appointments", "users"
   add_foreign_key "payments", "appointments"
-  add_foreign_key "prof_ocus", "ocupations"
-  add_foreign_key "prof_ocus", "professionals"
-  add_foreign_key "professionals", "users"
+  add_foreign_key "user_ocus", "ocupations"
+  add_foreign_key "user_ocus", "users"
 end

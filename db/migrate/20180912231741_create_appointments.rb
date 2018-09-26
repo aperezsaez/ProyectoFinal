@@ -3,8 +3,7 @@ class CreateAppointments < ActiveRecord::Migration[5.2]
     create_table :appointments do |t|
       t.date :date
       t.boolean :done, default: false
-      t.references :professional, foreign_key: true
-      t.references :client, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

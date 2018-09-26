@@ -2,6 +2,10 @@
 
 one:
   user: one
+  ocupation: one
+  Price: 1
 
 two:
   user: two
+  ocupation: two
+  Price: 1
