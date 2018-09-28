@@ -1,45 +1,45 @@
-<h2>Sign up</h2>
+<h2>Registro</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, autocomplete: "Nombre" %>
+    <%= f.label 'Ingrese Su Nombre' %>
+    <%= f.text_field :name%>
   </div>
 
   <div class="field">
-    <%= f.label :photo %>
-    <%= f.text_field :photo, autocomplete: "Foto de Perfil"%>
+    <%= f.label 'Subir una Foto de Perfil' %>
+    <%= f.text_field :photo %>
   </div>
 
   <div class="field">
-    <%= f.label :phone%>
-    <%= f.telephone_field :phone, autocomplete: "Telefono"%>
+    <%= f.label 'Ingrese Su Número de Telefono' %>
+    <%= f.telephone_field :phone%>
   </div>
 
   <div class="field">
-    <%= f.label :address%>
-    <%= f.text_field :address, autocomplete: "Dirección"%>
-
+    <%= f.label 'Ingrese Su Email' %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
+    <%= f.label 'Cliente o Profesional' %>
+    <%= f.select :role, User.roles.keys.to_a, {include_blank: true} %>
   </div>
 
+
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label "Ingrese una Contraseña" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <em><%= @minimum_password_length %> Caracteres Mínimo</em>
+    <% end %>
+    <%= f.password_field :password%>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label "Confirme su Contraseña" %>
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <div class="actions">

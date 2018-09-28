@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :user_ocus
   has_many :ocupations, through: :user_ocu
+  enum role: [:Admin, :Cliente, :Profesional]
 end
