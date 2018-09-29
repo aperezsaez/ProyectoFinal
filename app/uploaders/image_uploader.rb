@@ -19,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-   "https://www.google.cl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiy1e7Nj9zdAhXEEJAKHdV3CHIQjRx6BAgBEAU&url=http%3A%2F%2Fwww.urbe10.com%2Fagent%2Fvictor-torres%2Fsilueta-hombre%2F&psig=AOvVaw2PoScN_RFfapYfe8oG5Q_4&ust=1538169887063740"
+   "https://www.definicionabc.com/wp-content/uploads/silueta.gif"
  end
 
   # Process files as they are uploaded:

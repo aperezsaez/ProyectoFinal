@@ -1,5 +1,4 @@
-class UserController < ApplicationController
-  attr_accessor
+class PagesController < ApplicationController
   def index
     @user = User.all
   end
