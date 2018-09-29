@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= f.label 'Cliente o Profesional' %>
-    <%= f.select :role, User.roles.keys.to_a, {include_blank: true} %>
+    <%= f.select :role, @roles, {include_blank: true} %>
   </div>
 
 
