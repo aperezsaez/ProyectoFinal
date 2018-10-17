@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Ocupation.create name: 'Gasfiter'
-Ocupation.create name: 'Carpintero'
-Ocupation.create name: 'Constructor'
-Ocupation.create name: 'Electricista'
-Ocupation.create name: 'Informatico'
+#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+10.times do |i|
+  User.create!(
+    name: Faker::Name.name,
+    email: "usuario#{i}@gmail.com",
+    password: 
+  )
+end
