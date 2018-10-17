@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label 'Subir una Foto de Perfil' %>
-    <%= f.text_field :photo %>
+    <%= f.file_field :photo %>
   </div>
 
   <div class="field">
@@ -22,6 +22,12 @@
     <%= f.label 'Ingrese Su Email' %>
     <%= f.email_field :email %>
   </div>
+
+  <div class="field">
+    <%= f.label 'Cliente o Profesional' %>
+    <%= f.select :role, @roles, {include_blank: true} %>
+  </div>
+
 
   <div class="field">
     <%= f.label "Ingrese una Contraseña" %>

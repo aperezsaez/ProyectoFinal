@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href=<%= root_path %>>Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <%= link_to "Tus Citas" , '#', class:'nav-link' %>
+        <% end %>
+      </li>
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <% if user_signed_in? %>
+           <%= current_user.email %>
+         <% else %>
+           Ingresar
+         <% end %>
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+         <% if user_signed_in? %>
+             <%= link_to "Salir", destroy_user_session_path, method: :delete, class:'dropdown-item' %>
+           <% else %>
+             <%= link_to "Ingresar", new_user_session_path, class:'dropdown-item' %>
+             <%= link_to "Registrar", new_user_registration_path, class:'dropdown-item' %>
+           <% end %>
+      </li>
+    </div>
+    </ul>
+  </div>
+</nav>
