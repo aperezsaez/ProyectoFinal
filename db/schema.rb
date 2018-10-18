@@ -44,22 +44,15 @@ ActiveRecord::Schema.define(version: 2018_10_17_221906) do
   create_table "appointments", force: :cascade do |t|
     t.datetime "date"
     t.boolean "done", default: false
-    t.integer "client_id"
-    t.integer "professional_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "approved", default: false
-    t.index ["client_id"], name: "index_appointments_on_client_id"
-    t.index ["professional_id"], name: "index_appointments_on_professional_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "ocupations", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,14 +89,11 @@ ActiveRecord::Schema.define(version: 2018_10_17_221906) do
     t.datetime "updated_at", null: false
     t.text "bio"
     t.integer "role"
-    t.string "provider"
-    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "appointments", "users", column: "client_id"
-  add_foreign_key "appointments", "users", column: "professional_id"
+  add_foreign_key "appointments", "users"
   add_foreign_key "payments", "appointments"
   add_foreign_key "user_ocus", "ocupations"
   add_foreign_key "user_ocus", "users"
