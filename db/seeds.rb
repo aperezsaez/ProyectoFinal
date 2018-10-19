@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #User.destroy_all
 
-#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
 15.times do |i|
   User.create(
     name: Faker::Name.name,

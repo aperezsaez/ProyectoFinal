@@ -26,7 +26,7 @@ index do
   end
   column :role
   column :Ocupation do
-    user.ocupation.name
+    user.ocupations.name
   end
 end
 
