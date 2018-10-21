@@ -1,0 +1,7 @@
+
+<%= @user.name %>
+<img src="<%= asset_path @user.photo%>" alt="">
+<%= @user.role%>
+<%= @user.email%>
+<%= link_to "Volver",root_path %>
+<%= link_to "Crear Cita", new_user_appointment_path(@user.id) %>
