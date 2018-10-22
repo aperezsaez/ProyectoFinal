@@ -10,6 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require bootstrap.min
+//= require isotope
+//= require imagesloaded.min
+//= require wow.min
+//= require smoothscroll
+//= require jquery.flexslider
+//= require custom
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

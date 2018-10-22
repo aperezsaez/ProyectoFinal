@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 
   def index
-    @user = User.all
+    @user = User.where(role: 2).last(3)
   end
 
   def show

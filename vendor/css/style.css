@@ -78,7 +78,7 @@ p
 .navbar-default .navbar-toggle:focus { background-color: transparent }
 /* end navigation */
 
-/* start home */        
+/* start home */
 #home
 	{
       padding-top: 65px;
@@ -104,7 +104,7 @@ p
   display: block;
 }
 .flexslider .slides > li {
-  display: none;  
+  display: none;
   padding: 0;
   position: relative;
   -webkit-backface-visibility: hidden;
@@ -182,7 +182,7 @@ p
 /* start divider */
 #divider
     {
-        background: url('../images/divider-bg.jpg');
+        background: url( "divider-bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         color: #FFFFFF;
@@ -277,7 +277,7 @@ p
 /* start newsletter */
 #newsletter
     {
-        background: url('../images/newsletter-bg.jpg') center center;
+        background: url("letter-bg.jpg") center center;
         background-size: cover;
         background-repeat: no-repeat;
         color: #ffffff;
@@ -501,7 +501,7 @@ p
 /* start contact */
 #contact
     {
-        background: url('../images/contact-bg.jpg');
+        background: url("contact-bg.jpg" );
         background-size: cover;
         background-repeat: no-repeat;
         color: #ffffff;
@@ -626,8 +626,8 @@ footer .social-icon
     }
     .flexslider h1 { font-size: 26px; }
     .flexslider h2 { font-size: 18px; }
-    .templatemo-slider-btn { 
-        margin-top: 10px; 
+    .templatemo-slider-btn {
+        margin-top: 10px;
         width: 180px;
         height: 40px;
         padding-top: 8px;
@@ -636,14 +636,14 @@ footer .social-icon
 /* end templatemo 768 media quires */
 
 /* start templatemo 600 media quires */
-@media only screen and ( max-width: 640px ) {   
+@media only screen and ( max-width: 640px ) {
     .flexslider h1 { font-size: 20px; }
     .flexslider h2 { font-size: 14px; }
     .templatemo-slider-btn {
         width: auto;
         height: auto;
         padding: 10px 20px;
-        margin-top: 10px; 
+        margin-top: 10px;
     }
 }
 /* end templatemo 600 media quires */
@@ -654,6 +654,6 @@ footer .social-icon
         {
             padding-top: 40px;
         }
-    
+
 }
 /* end templatemo 360 media quires */
