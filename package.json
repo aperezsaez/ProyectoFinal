@@ -2,6 +2,9 @@
   "name": "ProyectoFinal",
   "private": true,
   "dependencies": {
-    "fullcalendar": "^3.9.0"
+    "bootstrap": "^4.1.3",
+    "fullcalendar": "^3.9.0",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1"
   }
 }
