@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find(params[:id]).current_user
     @appointments = Appointment.all.where(current_user.id == @appointment.user_id)
   end
 
