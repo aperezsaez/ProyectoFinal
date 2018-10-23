@@ -1,7 +1,6 @@
-<% @user.each do |u| %>
-<%= u.name %>
-<img src="<%= asset_path u.photo%>" alt="">
-<%= u.role%>
-<%= u.email%>
-<%= link_to "Ver Perfil", user_path(u.id) %>
+<% @users.each do |u|%>
+  <%= u.name %>
+  <img src="<%= asset_path u.photo%>" alt="">
+  <%= u.role%>
+  <%= u.email%>
 <% end %>
