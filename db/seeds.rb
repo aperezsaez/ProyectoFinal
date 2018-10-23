@@ -11,3 +11,6 @@ User.create(
   password: '123456',
   email: "usuario#{i}@gmail.com")
 end
+User.create(email: "gonzalo@desafiolatam.com",
+ password:"12345678",
+ address:"Ezequías Allende 2361, Santiago, Chile")  

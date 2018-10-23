@@ -3,48 +3,91 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label 'Ingrese Su Nombre' %>
-    <%= f.text_field :name%>
-  </div>
+  <div class="row">
+    <div class="container">
+      <div class="field col-md-12">
+        <%= f.label :name, "Ingrese su nombre" %>
+        <%= f.text_field :name%>
+      </div>
 
-  <div class="field">
-    <%= f.label 'Subir una Foto de Perfil' %>
-    <%= f.file_field :photo %>
-  </div>
+      <div class="field">
+        <%= f.label :address, "Dirección" %>
+        <div class="row">
+          <div class="col-md-10">
+        <%= f.text_field :address %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to  "#", class: 'btn btn-primary', id: 'find-address' do %>
+          <i class="fa fa-map-marker"></i>
+          <% end %>
+        </div>
+      </div>
+      </div>
 
-  <div class="field">
-    <%= f.label 'Ingrese Su Número de Telefono' %>
-    <%= f.telephone_field :phone%>
-  </div>
+      <div class="field col-md-12">
+        <%= f.label :photo, "Suba una foto de perfil" %>
+        <%= f.file_field :photo %>
+      </div>
 
-  <div class="field">
-    <%= f.label 'Ingrese Su Email' %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Cliente o Profesional' %>
-    <%= f.select :role, @roles %>
-  </div>
+      <div class="field col-md-12">
+        <%= f.label :phone, "Ingrese su número"%>
+        <%= f.telephone_field :phone%>
+      </div>
 
 
-  <div class="field">
-    <%= f.label "Ingrese una Contraseña" %>
-    <% if @minimum_password_length %>
-    <em><%= @minimum_password_length %> Caracteres Mínimo</em>
+      <div class="field col-md-12">
+        <%= f.label :email, "Ingrese su email" %>
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field col-md-12">
+        <%= f.label :role, "Cliente o Profesional" %>
+        <%= f.select :role, @roles %>
+      </div>
+
+
+      <div class="field col-md-12">
+        <%= f.label :password, "Ingrese una contraseña" %>
+        <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> Caracteres Mínimo</em>
+        <% end %>
+        <%= f.password_field :password%>
+      </div>
+
+      <div class="field col-md-12">
+        <%= f.label :password_confirmation, "Confirme su contraseña" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+
     <% end %>
-    <%= f.password_field :password%>
-  </div>
+    <%= render "devise/shared/links" %>
 
-  <div class="field">
-    <%= f.label "Confirme su Contraseña" %>
-    <%= f.password_field :password_confirmation %>
+    </div>
   </div>
+<script>
+    $("#find-address").click(function(event){
+      event.preventDefault()
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getAddress);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    })
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    function getAddress(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      Rails.ajax({
+      url: '/geocontroller/findaddress',
+      type: 'GET',
+      dataType: 'json',
+      data: {latitude: latitude, longitude: longitude}
+    })
+   };
 
-<%= render "devise/shared/links" %>
+
+</script>
