@@ -1,13 +1,13 @@
-class PagesController < ApplicationController
+class UsersController < ApplicationController
   before_action :authenticate_user!, except: :index
-  attr_accessor
+
 
   def index
     @user = User.all
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find(params[:id])
   end
 
   private

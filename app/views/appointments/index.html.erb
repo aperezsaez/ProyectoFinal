@@ -1,0 +1,6 @@
+<% @appointments.each do |app|%>
+<%= app.name %>
+<%= app.date %>
+<%= app.description %>
+<% end %>
+<%= link_to 'Volver', root_path %>
