@@ -1,0 +1,7 @@
+<% Array(@appointment).each do |a|%>
+<%= image_tag @user.photo.url %>
+<%= image_tag current_user.photo.url %>
+<%= a.name %>
+<%= a.description %>
+<%= a.date %>
+<% end %>
