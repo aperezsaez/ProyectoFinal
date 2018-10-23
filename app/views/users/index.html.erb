@@ -1,7 +1,6 @@
-
-<div id='calendar'></div>
-<script>
-$('#calendar').fullCalendar({
-    eventSources: ["/appointments"]
-});
-</script>
+<% @users.each do |u|%>
+  <%= u.name %>
+  <img src="<%= asset_path u.photo%>" alt="">
+  <%= u.role%>
+  <%= u.email%>
+<% end %>

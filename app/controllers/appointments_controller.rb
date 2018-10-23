@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find(params[:id]).current_user
     @user = User.find(params[:user_id])
   end
 
