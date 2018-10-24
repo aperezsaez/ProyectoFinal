@@ -6,5 +6,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :email, :bio, :phone, :role])
   end
 
+  def after_sign_up_path_for(resources)
+      edit_user_registration(current_user.id)
+  end
+
 
 end
