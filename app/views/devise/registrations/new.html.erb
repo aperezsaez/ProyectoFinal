@@ -70,24 +70,35 @@
   </div>
 <script>
     $("#find-address").click(function(event){
-      event.preventDefault()
+      event.preventDefault();
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getAddress);
       } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
-    })
+    });
 
     function getAddress(position) {
       var latitude = position.coords.latitude;
       var longitude = position.coords.longitude;
-      Rails.ajax({
+      $.ajax({
       url: '/geocontroller/findaddress',
       type: 'GET',
       dataType: 'json',
       data: {latitude: latitude, longitude: longitude}
     })
-   };
+    .done(function() {
+      console.log("success");
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+   }
+
+
 
 
 </script>
