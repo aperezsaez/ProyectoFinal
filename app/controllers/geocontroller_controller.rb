@@ -2,8 +2,7 @@
 
 class GeocontrollerController < ApplicationController
   def find_address
-    @address = Geocoder.address(
-      [params[:latitude], params[:longitude]]
-    )
+    @address = Geocoder.address([params[:latitude], params[:longitude]])
+
   end
 end
