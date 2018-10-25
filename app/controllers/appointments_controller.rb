@@ -3,10 +3,11 @@
 class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.all
+
   end
 
   def show
-    @appointment = Appointment.find(params[:id]).current_user
+    @appointment = Appointment.find(params[:id], params[:user_id])
     @user = User.find(params[:user_id])
   end
 
@@ -31,9 +32,22 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @appointments = Appointment.all
+    @appointments.where( :user_id == current_user.id).all
+  end
 
-  def update; end
+  def update
+    respond_to do |format|
+     if @appointment.update(appointments_params)
+       format.html { redirect_to @appointment, notice: 'Event was successfully updated.' }
+       format.json { render :show, status: :ok, location: @appointment }
+     else
+       format.html { render :edit }
+       format.json { render json: @appointment.errors, status: :unprocessable_entity }
+     end
+   end
+  end
 
   def destroy; end
 
