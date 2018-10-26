@@ -8,13 +8,10 @@ gem 'carrierwave'
 gem 'rails', '~> 5.2.1'
 gem 'devise'
 gem 'mini_magick'
-<<<<<<< HEAD
 gem 'omniauth-facebook'
-=======
 gem 'activeadmin'
 gem 'faker'
 gem 'cancancan'
->>>>>>> master
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
