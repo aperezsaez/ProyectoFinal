@@ -14,7 +14,7 @@ Rails.application.routes.draw do
    end
 
   root to: 'users#index'
-  get 'proffesional/index'
+  get 'professional/index'
   get 'about/about_us'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -13,7 +13,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
           <li> <%= link_to "HOME", root_path, class:'smoothScroll' %> </li>
-          <li><%= link_to "Indice de Usuarios", proffesional_index_path , class:'smoothScroll' %> </li>
+          <li><%= link_to "Indice de Usuarios", professional_index_path , class:'smoothScroll' %> </li>
           <li><%= link_to "Tus Citas" ,user_appointments_path(current_user), class:'smoothScroll' %></li>
           <% else %>
           <li> <%= link_to "HOME", root_path, class:'smoothScroll' %> </li>

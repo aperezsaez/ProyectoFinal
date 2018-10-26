@@ -43,11 +43,16 @@
     <%= f.label :phone, 'Cambiar Número de Telefono' %>
     <%= f.telephone_field :phone, class: 'form-control', maxlength: '10'%>
   </div>
-  <div class="field">
+  <div class="form-group mt-3">
     <%= f.label :role, 'Cliente o Profesional' %>
-    <%= f.select :role, @roles, class: 'form-control' %>
+    <%= f.select :role, @roles,{include_blank: true}, class: 'form-control' %>
   </div>
-  
+
+  <div class="form-group mt-3">
+         <%= f.label :ocupation %>
+         <%= select("user", "ocupation", %w[Profesor Gasfiter Carpintero Mecanico Medico Masajista], {include_blank: true}, class: 'form-control')%>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Update" %>
