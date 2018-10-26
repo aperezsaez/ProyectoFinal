@@ -27,6 +27,7 @@ ActiveAdmin.register User do
       user.created_at.strftime('%F')
     end
     column :role
+    column :ocupation
     actions
   end
 
@@ -38,7 +39,7 @@ ActiveAdmin.register User do
       f.input :role
       f.input :phone
       f.input :photo
-      f.input :bio
+      f.input :ocupation
       actions
     end
   end
