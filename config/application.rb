@@ -11,8 +11,6 @@ module ProyectoFinal
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.assets.initialize_on_precompile = false
-    config.assets.js_compressor = NoCompression.new
-    config.assets.css_compressor = NoCompression.new
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
