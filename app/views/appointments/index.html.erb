@@ -1,4 +1,5 @@
 <% @appointments.each do |app|%>
+<%= image_tag @user.photo.url %>
 <%= app.name %>
 <%= app.date %>
 <%= app.description %>
