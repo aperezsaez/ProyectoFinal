@@ -19,7 +19,6 @@
 //= require jquery.flexslider
 //= require custom
 //= require rails-ujs
-//= require jquery/dist/jquery
 //= require moment/moment
 //= require fullcalendar/dist/fullcalendar
 //= require activestorage
