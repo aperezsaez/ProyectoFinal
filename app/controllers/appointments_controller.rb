@@ -3,11 +3,11 @@
 class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.all
+    @user = User.find(params[:user_id])
   end
 
   def show
-    @appointment = Appointment.find(params[:id], params[:user_id])
-    @user = User.find(params[:user_id])
+    @appointment = Appointment.find(params[:user_id],current_user.id)
   end
 
   def new
@@ -22,7 +22,7 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save!
-        format.html { redirect_to user_appointment_path(User.find(params[:user_id]).id, current_user.id), notice: 'Event was successfully created.'}
+        format.html { redirect_to user_appointments_path(User.find(params[:user_id]).id, current_user.id), notice: 'Event was successfully created.'}
         format.json { render :show, status: :created, location: @appointment }
       else
         format.html { render :new }
