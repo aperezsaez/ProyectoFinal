@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'about/about_us'
   devise_for :users, controllers: {
      sessions: 'users/sessions',
      registrations: 'users/registrations'

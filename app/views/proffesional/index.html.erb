@@ -11,10 +11,8 @@
         <h3><%= u.name %></h3>
         <h2><%= u.email%></h2>
         <p><%= u.bio %></p>
-         <ul class="text-center">
-               <li><%= link_to "Ver Perfil", user_path(u.id), class: 'wow fadeInUp' %></li>
-               <li><%= link_to "Volver", root_path, class: 'wow fadeInUp' %></li>
-         </ul>
+        <%= link_to "Ver Perfil", user_path(u.id), class: 'smoothScroll btn btn-success wow fadeInUp' %>
+        <%= link_to "Volver", root_path, class: 'smoothScroll btn btn-success wow fadeInUp' %>
       </div>
          <% end %>
     </div>

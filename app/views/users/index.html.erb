@@ -131,7 +131,7 @@
         <h2><%= u.email%></h2>
         <p><%= u.bio %></p>
          <ul class="text-center">
-               <li><%= link_to "Ver Perfil", user_path(u.id), claas: 'wow fadeInUp' %></li>
+               <li><%= link_to "Ver Perfil", user_path(u.id), class:'smoothScroll btn btn-success wow fadeInUp' %></li>
          </ul>
       </div>
          <% end %>
@@ -163,23 +163,40 @@
   </div>
 </div>
 
-<footer>
+<div id="portfolio">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-sm-7">
-        <p>SOLUCIONES A TU ACANCE</p>
-        <small>HECHO POR ALEX PÉREZ</small>
-      </div>
-      <div class="col-md-4 col-sm-5">
-        <ul class="social-icon">
-          <li><a href="#" class="fa fa-facebook"></a></li>
-          <li><a href="#" class="fa fa-twitter"></a></li>
-          <li><a href="#" class="fa fa-instagram"></a></li>
-          <li><a href="#" class="fa fa-pinterest"></a></li>
-          <li><a href="#" class="fa fa-google"></a></li>
-          <li><a href="#" class="fa fa-github"></a></li>
-        </ul>
+      <div class="col-md-12 text-center">
+        <h2 class="wow bounce">PROFESIONALES</h2>
+          <div class="iso-section wow fadeIn" data-wow-delay="0.6s">
+
+            <ul class="filter-wrapper clearfix">
+                         <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
+                         <li><a href="#" class="opc-main-bg" data-filter=".Profesor">Profesor</a></li>
+                         <li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
+                        <li><a href="#" class="opc-main-bg" data-filter=".wallpaper">Wallpaper</a></li>
+                     </ul>
+
+                    <div class="iso-box-section">
+                      <div class="iso-box-wrapper col4-iso-box">
+
+                        <div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">
+                          <div class="portfolio-thumb">
+                            <img src="images/portfolio-img1.jpg" class="fluid-img" alt="portfolio img">
+                              <div class="portfolio-overlay">
+                                <a href="#" class="fa fa-search"></a>
+                                <a href="#" class="fa fa-link"></a>
+                                <h4>Project title</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+                              </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+          </div>
       </div>
     </div>
   </div>
-</footer>
+</div>
