@@ -15,6 +15,7 @@ gem 'cancancan'
 gem 'geocoder'
 gem 'chartkick'
 gem 'groupdate'
+gem 'webpacker', require: false
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0', group: :production
 # Use Puma as the app server
