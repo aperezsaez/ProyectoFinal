@@ -1,0 +1,22 @@
+<div id="team">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="wow bounce">Indice de Profesionales</h2>
+      </div>
+      <% @user.each do |u|%>
+      <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="1.3s">
+        <img src="<%= asset_path u.photo%>" class="img-responsive" alt="team img">
+        <h4><%= u.role %></h4>
+        <h3><%= u.name %></h3>
+        <h2><%= u.email%></h2>
+        <p><%= u.bio %></p>
+         <ul class="text-center">
+               <li><%= link_to "Ver Perfil", user_path(u.id), class: 'wow fadeInUp' %></li>
+               <li><%= link_to "Volver", root_path, class: 'wow fadeInUp' %></li>
+         </ul>
+      </div>
+         <% end %>
+    </div>
+  </div>
+</div>

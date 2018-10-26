@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: :index
-
 
   def index
     @user = User.where(role: 2).last(3)
