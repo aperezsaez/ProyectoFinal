@@ -1,10 +1,16 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.html { redirect_to root_url, alert: exception.message }
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :email, :bio, :phone, :role])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name photo email bio phone role])
   end
-
-
 end
