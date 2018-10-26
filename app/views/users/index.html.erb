@@ -1,7 +1,164 @@
-<% @user.each do |u| %>
-<%= u.name %>
-<img src="<%= asset_path u.photo%>" alt="">
-<%= u.role%>
-<%= u.email%>
-<%= link_to "Ver Perfil", user_path(u.id) %>
-<% end %>
+<div class="templatemo_headerimage">
+  <div class="flexslider">
+    <ul class="slides">
+      <li>
+        <img src="<%= asset_path '1.jpg' %>" alt="Slide 1">
+        <div class="slider-caption">
+        <div class="templatemo_homewrapper">
+          <h1 class="wow fadeInDown" data-wow-delay="2000">ENCUENTRA TU SOLUCIÓN</h1>
+          <h2 class="wow fadeInDown" data-wow-delay="2000">
+        <span>BUSCA &AMP; RESUELVE TUS PROBLEMAS </span>
+      </h2>
+      <%= link_to "REGISTRATE EN NUESTRO SITIO", new_user_registration_path, class:'smoothScroll btn btn-default wow fadeInDown' %>
+        </div>
+      </div>
+      </li>
+      <li>
+        <img src="<%= asset_path 'slider/2.jpg'%>" alt="">
+        <div class="slider-caption">
+        <div class="templatemo_homewrapper">
+          <h1 class="wow fadeInDown" data-wow-delay="2000">Flex Slider, CSS Flexbox</h1>
+          <h2 class="wow fadeInDown" data-wow-delay="2000">
+        <span>work on all modern browsers, Works on IE 10+</span>
+      </h2>
+      <p>see caniuse.com for browser compatibility information</p>
+      <a href="#about" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">See about us</a>
+        </div>
+      </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="service">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-4">
+        <div class="media">
+          <div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
+            <i class="fab fa-accessible-icon"></i>
+          </div>
+          <div class="media-body wow fadeIn">
+            <h3 class="media-heading">Un Sitio Para Todos</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="media">
+          <div class="media-object media-left wow fadeIn" data-wow-delay="0.3s">
+            <i class="fas fa-address-card"></i>
+          </div>
+          <div class="media-body wow fadeIn">
+            <h3 class="media-heading">Presentate a tus clientes</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="media">
+          <div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <div class="media-body wow fadeIn" data-wow-delay="0.3s">
+            <h3 class="media-heading">Sin Estafas</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="media">
+          <div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="media-body wow fadeIn" data-wow-delay="0.6s">
+            <h3 class="media-heading">Red de Profesionales</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="media">
+          <div class="media-object media-left wow fadeIn" data-wow-delay="0.4s">
+            <i class="fas fa-blind"></i>
+          </div>
+          <div class="media-body wow fadeIn" data-wow-delay="0.3s">
+            <h3 class="media-heading">No más a ciegas</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="media">
+          <div class="media-object media-left wow fadeIn" data-wow-delay="0.8s">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="media-body wow fadeIn" data-wow-delay="0.6s">
+            <h3 class="media-heading">Evalua el trabajo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="divider">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-sm-1"></div>
+      <div class="col-md-8 col-sm-8">
+        <h2 class="wow bounce">We provide <strong>solutions</strong></h2>
+        <h3 class="wow fadeIn" data-wow-delay="0.6s"><mark>Creative</mark> Designers &amp; <mark>Talented</mark> Developers</h3>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Nulla ultricies bibendum augue et molestie. Suspendisse pellentesque mollis imperdiet. Quisque sodales laoreet tincidunt. Phasellus ut mi orci. Vivamus id odio ac justo tincidunt placerat. Nulla facilisi. Vivamus et dolor urna. Sed vestibulum urna justo, nec malesuada urna aliquet et.</p>
+      </div>
+      <div class="col-md-2 col-sm-2"></div>
+    </div>
+  </div>
+</div>
+
+<div id="team">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="wow bounce">Algunos de Nuestros Profesionales</h2>
+      </div>
+      <% @user.each do |u|%>
+      <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="1.3s">
+        <img src="<%= asset_path u.photo%>" class="img-responsive" alt="team img">
+        <h4><%= u.role %></h4>
+        <h3><%= u.name %></h3>
+        <h2><%= u.email%></h2>
+        <p><%= u.bio %></p>
+         <ul class="text-center">
+               <li><%= link_to "Ver Perfil", user_path(u.id), class:'smoothScroll btn btn-success wow fadeInUp' %></li>
+         </ul>
+      </div>
+         <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 wow fadeInLeft" data-wow-delay="0.6s">
+        <h2><strong>Solution</strong> Co.</h2>
+        <p>Quisque at elit sapien. Sed velit enim, fringilla non suscipit quis, tristique et turpis. Proin vitae nisi justo.</p>
+        <ul class="social-icon">
+          <li><a href="#" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="#" class="fa fa-instagram"></a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-sm-7 wow fadeIn" data-wow-delay="0.9s">
+        <address>
+          <h3>Visit Office</h3>
+          <p><i class="fa fa-map-marker too-icon"></i> 123 Walking Street, New York</p>
+          <p><i class="fa fa-phone too-icon"></i> 010-010-0220</p>
+          <p><i class="fa fa-envelope-o too-icon"></i> hello@company.com</p>
+        </address>
+      </div>
+    </div>
+  </div>
+</div>

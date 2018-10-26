@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: :index
 
-
   def index
-    @user = User.all
+    @user = User.where(role: 2).last(3)
+    @users = User.where(role: 2).all
   end
 
   def show

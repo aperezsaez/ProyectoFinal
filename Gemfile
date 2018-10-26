@@ -10,6 +10,7 @@ gem 'devise'
 gem 'mini_magick'
 gem 'activeadmin'
 gem 'faker'
+gem 'cancancan'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
