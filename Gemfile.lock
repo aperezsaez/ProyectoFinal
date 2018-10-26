@@ -106,6 +106,9 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    formtastic (3.1.5)
+      actionpack (>= 3.2.13)
+    formtastic_i18n (0.6.0)
     geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -289,11 +292,8 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-<<<<<<< HEAD
-  geocoder
-=======
   faker
->>>>>>> master
+  geocoder
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mini_magick
