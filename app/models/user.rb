@@ -17,4 +17,7 @@ class User < ApplicationRecord
       user.name = auth.info.name
     end
   end
+  def self.created_by_day
+    group_by_day(:created_at).count
+  end
 end

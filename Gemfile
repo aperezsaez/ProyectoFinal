@@ -13,6 +13,8 @@ gem 'activeadmin'
 gem 'faker'
 gem 'cancancan'
 gem 'geocoder'
+gem 'chartkick'
+gem 'groupdate'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
