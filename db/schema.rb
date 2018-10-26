@@ -29,12 +29,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_121013) do
     t.index ["professional_id"], name: "index_appointments_on_professional_id"
   end
 
-  create_table "ocupations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "payments", force: :cascade do |t|
     t.date "date"
     t.integer "price"
@@ -42,16 +36,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_121013) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["appointment_id"], name: "index_payments_on_appointment_id"
-  end
-
-  create_table "user_ocus", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "ocupation_id"
-    t.integer "Price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ocupation_id"], name: "index_user_ocus_on_ocupation_id"
-    t.index ["user_id"], name: "index_user_ocus_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,7 +49,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_121013) do
     t.integer "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "bio"
+    t.string "ocupation"
     t.integer "role"
     t.string "provider"
     t.string "uid"
@@ -79,6 +63,4 @@ ActiveRecord::Schema.define(version: 2018_10_23_121013) do
   add_foreign_key "appointments", "users", column: "client_id"
   add_foreign_key "appointments", "users", column: "professional_id"
   add_foreign_key "payments", "appointments"
-  add_foreign_key "user_ocus", "ocupations"
-  add_foreign_key "user_ocus", "users"
 end

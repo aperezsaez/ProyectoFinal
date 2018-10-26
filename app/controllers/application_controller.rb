@@ -11,8 +11,13 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name photo email bio
-                                                         phone role address
-                                                         latitude longitude])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name photo email ocupation phone role address
+    latitude longitude])
   end
+
+  def after_sign_up_path_for(resources)
+      edit_user_registration(current_user.id)
+  end
+
+
 end

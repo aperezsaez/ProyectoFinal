@@ -1,6 +1,8 @@
 <% Array(@appointment).each do |a|%>
 <%= image_tag @user.photo.url %>
-<%= image_tag current_user.photo.url %>
+<%= image_tag @user2.photo.url %>
+<%= a.client_id %>
+<%= a.professional_id %>
 <%= a.name %>
 <%= a.description %>
 <%= a.date %>

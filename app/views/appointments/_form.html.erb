@@ -1,20 +1,26 @@
-<%= form_with(model: [@user, @appointment], local: true) do |form|%>
+<div class="container py-5">
+<div class="row">
+<div class="col-lg-8 mx-auto">
+<%= form_with(model: [@user,Appointment.new], local: true) do |form|%>
 <div class="form-group">
-  <%= form.label :date, "djfndnf2" %>
-  <%= form.date_select :date %>
+  <%= form.label :date, "Fecha" %>
+  <%= form.date_select :date, class: 'form-control' %>
 </div>
 
 <div class="form-group">
-  <%= form.label :description %>
-  <%= form.text_area :description %>
+  <%= form.label :description, "Descripción" %>
+  <%= form.text_area :description, class: 'form-control' %>
 </div>
 
 <div class="form-group">
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, class: 'form-control' %>
 </div>
 
 <div class="actions">
   <%= form.submit%>
 </div>
 <% end %>
+</div>
+</div>
+</div>

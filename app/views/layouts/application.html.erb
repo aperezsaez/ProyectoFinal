@@ -4,13 +4,20 @@
     <title>ProyectoFinal</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/82f5441ef6.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
   <body>
 
       <%= render 'layouts/navbar' %>
+      <%= yield %>
+      <%= render 'layouts/footer'%>
 
-          <%= yield %>
+  </div>
 
 
   </body>
