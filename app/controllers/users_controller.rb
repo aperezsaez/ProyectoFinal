@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @appointments = Appointment.all
+    @appointment = Appointment.find(params[:id], params[:user_id])
+    @user = User.find(params[:user_id])
   end
 
   def show

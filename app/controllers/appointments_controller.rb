@@ -3,7 +3,6 @@
 class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.all
-
   end
 
   def show
@@ -33,8 +32,6 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @appointments = Appointment.all
-    @appointments.where( :user_id == current_user.id).all
   end
 
   def update

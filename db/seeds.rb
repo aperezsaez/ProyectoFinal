@@ -11,3 +11,10 @@ User.create(
   password: '123456',
   email: "usuario#{i}@gmail.com")
 end
+
+100.times do |i|
+  Appointment.create(
+    date: DateTime.now,
+    professional_id: User.where(role: 2).RANDOM(),
+    client_id: User.all.RANDOM())
+end
