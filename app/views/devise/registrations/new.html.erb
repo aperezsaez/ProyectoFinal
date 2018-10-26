@@ -69,7 +69,7 @@
   </div>
 
 
-<script type="text/javascript">
+<script type=>
 $("#find-address").click(function(event){
   event.preventDefault();
   if (navigator.geolocation) {
@@ -93,7 +93,7 @@ $.ajax({
 .done(function() {
   console.log("success");
 })
-.always(function(data){
+.always(function(){
  $("#find-address").html('<i class="fa fa-map-marker"> </i>');
  })
 };
