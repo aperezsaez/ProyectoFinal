@@ -1,2 +1,9 @@
-<h1>Appointments#show</h1>
-<p>Find me in app/views/appointments/show.html.erb</p>
+<% Array(@appointment).each do |a|%>
+<%= image_tag @user.photo.url %>
+<%= image_tag @user2.photo.url %>
+<%= a.client_id %>
+<%= a.professional_id %>
+<%= a.name %>
+<%= a.description %>
+<%= a.date %>
+<% end %>

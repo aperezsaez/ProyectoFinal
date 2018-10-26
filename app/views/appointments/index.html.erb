@@ -1,5 +1,20 @@
-<% @appointments.each do |app|%>
-<%= app.name %>
-<%= app.date %>
-<%= app.description %>
-<% end %>
+<div id="team">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="wow bounce">Tus Citas</h2>
+      </div>
+      <% @appointments.each do |app|%>
+      <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="1.3s">
+        <img src="<%= asset_path @user.photo%>" class="img-responsive" alt="team img">
+        <h4><%= app.name %></h4>
+        <h3><%= app.date %></h3>
+        <h2><%= app.description%></h2>
+         <ul class="text-center">
+               <li><%= link_to "Volver", root_path, class:'smoothScroll btn btn-success wow fadeInUp' %></li>
+         </ul>
+      </div>
+         <% end %>
+    </div>
+  </div>
+</div>
