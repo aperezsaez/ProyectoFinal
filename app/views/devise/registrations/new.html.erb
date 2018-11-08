@@ -48,7 +48,7 @@
   </div>
 
   <div class="form-group mt-3">
-         <%= f.label :ocupation %>
+         <%= f.label :ocupation, "Ocupación" %><i>solo llenar si se ha identificado como profesional</i>
          <%= select("user", "ocupation", %w[Profesor Gasfiter Carpintero Mecanico Medico Masajista], {include_blank: true}, class: 'form-control')%>
   </div>
 
