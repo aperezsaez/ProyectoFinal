@@ -6,7 +6,7 @@
       </div>
       <% @user.each do |u|%>
       <div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="1.3s">
-        <img src="<%= asset_path u.photo%>" class="img-responsive" alt="team img">
+        <%= image_tag u.photo.url, class: 'img-responsive' %>
         <h4><%= u.role %></h4>
         <h3><%= u.name %></h3>
         <h2><%= u.email%></h2>

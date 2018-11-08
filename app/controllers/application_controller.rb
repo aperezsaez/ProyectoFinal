@@ -15,9 +15,12 @@ class ApplicationController < ActionController::Base
     latitude longitude])
   end
 
-  def after_sign_up_path_for(resources)
-      edit_user_registration(current_user.id)
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
   end
 
+  def after_sign_up_path_for(resource)
+      request.env['omniauth.origin'] || stored_location_for(resource) || edit_user_registration_path(current_user.id)
+  end
 
 end

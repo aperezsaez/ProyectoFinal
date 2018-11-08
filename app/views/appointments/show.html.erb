@@ -1,9 +1,19 @@
-<% Array(@appointment).each do |a|%>
-<%= image_tag @user.photo.url %>
-<%= image_tag @user2.photo.url %>
-<%= a.client_id %>
-<%= a.professional_id %>
-<%= a.name %>
-<%= a.description %>
-<%= a.date %>
-<% end %>
+<div id="team">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class= "container "style = "padding-top: 100px">
+          <% Array(@appointment).each do |a|%>
+          <div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="1.3s">
+            <%= image_tag a.professional.photo.url %>
+            <%= image_tag a.client.photo.url %>
+            <h3><%= a.date.strftime("%d/%m/%Y") %></h3>
+            <h1><%= a.name %></h1>
+            <h4><%= a.description %></h4>
+            <%= link_to "Volver", appointments_path, class:'smoothScroll btn btn-primary wow fadeInUp' %>
+          <% end %>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>

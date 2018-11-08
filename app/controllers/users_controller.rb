@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def index
     @user = User.where(role: 2).last(3)
-    @users = User.where(role: 2).all
   end
 
   def show
