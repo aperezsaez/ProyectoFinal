@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+AdminUser.destroy_all
 AdminUser.create!(email: 'admine@example.com', password: 'password', password_confirmation: 'password')
 ocupacion = %w[Profesor Gasfiter Carpintero Mecanico Medico Masajista]
  15.times do |i|
