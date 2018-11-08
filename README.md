@@ -1,8 +1,8 @@
 # README
 
 
-* https://nameless-chamber-93385.herokuapp.com/
-* https://youtu.be/zK20fwf0BHs
+* https://nameless-chamber-93385.herokuapp.com/  Link a producción
+* https://youtu.be/zK20fwf0BHs Video de App
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
