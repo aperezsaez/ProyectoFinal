@@ -7,7 +7,7 @@ class Ability
        user ||= User.new # guest user (not logged in)
        if user.Admin?
          can :manage, :all
-       elseif user.role("Professional")
+       elsif user.role("Professional")
          can :destroy, Appointment, professional_id: user.id
          can :create, Appointment
          can :read, :all
